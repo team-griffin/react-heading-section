@@ -1,6 +1,5 @@
 import React, {
   PropTypes,
-  Component,
   createElement,
   cloneElement,
   isValidElement,

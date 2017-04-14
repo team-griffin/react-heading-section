@@ -3,7 +3,7 @@ import { Broadcast } from 'react-broadcast';
 import { setDisplayName, setPropTypes, compose } from 'recompose';
 
 export const HeadingRoot = ({
-  children
+  children,
 }) => (
   <Broadcast
     channel="@team-griffin/react-heading-section/depth"

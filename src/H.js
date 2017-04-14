@@ -4,7 +4,7 @@ import { setDisplayName, setPropTypes, compose } from 'recompose';
 export const H = ({
   depth,
   children,
-  ...rest,
+  ...rest
 }) => createElement(
   `h${depth}`,
   rest,
