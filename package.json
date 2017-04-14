@@ -1,0 +1,51 @@
+{
+  "name": "@team-griffin/react-heading-section",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "jsnext:main": "lib/index.js",
+  "repository": "git@github.com:team-griffin/react-heading-section.git",
+  "author": "Joshua Thornton <joshua.thornton@heg.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "npm run build",
+    "transpile": "babel src -d lib --copy-files",
+    "lint": "npm run lint:js && npm run flow",
+    "lint:js": "eslint -c ./config/.eslintrc.js 'src/**/*.js'",
+    "lint:js:fix": "eslint --fix -c ./config/.eslintrc.js 'src/**/*.js'",
+    "flow": "flow check; test $? -eq 0 -o $? -eq 2",
+    "build": "npm run transpile",
+    "ci": "npm run lint && npm run test && npm run build",
+    "postmerge": "yarn",
+    "storybook": "start-storybook -h 0.0.0.0 -p 9001 -c .storybook",
+    "test": "mocha --require babel-polyfill --compilers js:babel-register 'src/**/__tests__/*' -R spec",
+    "dockerfile:ci": "dockerscript ./docker/ci/dockerfile.js ./docker/ci/Dockerfile"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
+    "@team-griffin/eslint-config": "^1.0.0",
+    "@team-griffin/install-self-peers": "^1.0.0",
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.1.21",
+    "babel-eslint": "^7.2.2",
+    "babel-loader": "^6.1.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "dockerscript": "^0.0.6",
+    "enzyme": "^2.8.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-flowtype": "^2.30.4",
+    "eslint-plugin-react": "^6.10.3",
+    "mocha": "^3.2.0",
+    "react-test-renderer": "^15.5.4"
+  },
+  "dependencies": {
+    "react-broadcast": "^0.1.2",
+    "recompose": "^0.23.1"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
