@@ -36,6 +36,52 @@ storiesOf('Heading', module)
                   <H>My Title</H>
                 )}
               />
+
+              <Heading
+                component={(
+                  <H>My Title</H>
+                )}
+              />
+
+              <Heading
+                component={(
+                  <H>My Title</H>
+                )}
+              />
+
+              <Heading
+                component={(
+                  <H>My Title</H>
+                )}
+              />
+
+            <HeadingSection>
+              <div>
+                <Heading
+                  component={(
+                    <H>My Title</H>
+                  )}
+                />
+
+                <Heading
+                  component={(
+                    <H>My Title</H>
+                  )}
+                />
+
+                <Heading
+                  component={(
+                    <H>My Title</H>
+                  )}
+                />
+
+                <Heading
+                  component={(
+                    <H>My Title</H>
+                  )}
+                />
+              </div>
+            </HeadingSection>
             </div>
           </HeadingSection>
         </div>
