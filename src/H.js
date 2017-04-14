@@ -1,22 +1,22 @@
 import { PropTypes, createElement } from 'react';
+import { setDisplayName, setPropTypes, compose } from 'recompose';
 
-const H = (props) => {
-  const {
-    depth,
-    children,
-    ...rest
-  } = props;
+export const H = ({
+  depth,
+  children,
+  ...rest,
+}) => createElement(
+  `h${depth}`,
+  rest,
+  children,
+);
 
-  return createElement(
-    `h${depth}`,
-    rest,
-    children,
-  );
-};
-H.displayName = 'H';
-H.propTypes = {
-  depth: PropTypes.number.isRequired,
-  children: PropTypes.node,
-};
+export const enhance = compose(
+  setDisplayName('H'),
+  setPropTypes({
+    depth: PropTypes.number.isRequired,
+    children: PropTypes.node,
+  }),
+);
 
-export default H;
+export default enhance(H);

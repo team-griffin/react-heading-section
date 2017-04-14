@@ -1,19 +1,23 @@
 import React, { PropTypes } from 'react';
 import { Broadcast } from 'react-broadcast';
+import { setDisplayName, setPropTypes, compose } from 'recompose';
 
-const HeadingRoot = (props) => {
-  return (
-    <Broadcast
-      channel="@team-griffin/react-heading-section/depth"
-      value={0}
-    >
-      {props.children}
-    </Broadcast>
-  );
-};
-HeadingRoot.displayName = 'HeadingRoot';
-HeadingRoot.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+export const HeadingRoot = ({
+  children
+}) => (
+  <Broadcast
+    channel="@team-griffin/react-heading-section/depth"
+    value={0}
+  >
+    {children}
+  </Broadcast>
+);
 
-export default HeadingRoot;
+export const enhance = compose(
+  setDisplayName('HeadingRoot'),
+  setPropTypes({
+    children: PropTypes.node.isRequired,
+  })
+);
+
+export default enhance(HeadingRoot);

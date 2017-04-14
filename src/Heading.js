@@ -6,47 +6,36 @@ import React, {
   isValidElement,
 } from 'react';
 import { Subscriber } from 'react-broadcast';
+import { setDisplayName, setPropTypes, compose } from 'recompose';
 
-class Heading extends Component {
+export const Heading = ({
+  component,
+}) => (
+  <Subscriber channel="@team-griffin/react-heading-section/depth">
+    {(depth) => {
+      if (typeof component === 'string') {
+        return createElement(component, {
+        });
+      }
 
-  static propTypes = {
-    component: PropTypes.node.isRequired,
-  }
+      if (isValidElement(component)) {
+        return cloneElement(component, {
+          depth,
+        });
+      }
 
-  constructor(props) {
-    super(props);
-
-    this.renderComponent = this.renderComponent.bind(this);
-  }
-
-  renderComponent(depth) {
-    const {
-      component,
-    } = this.props;
-
-    if (typeof component === 'string') {
       return createElement(component, {
-      });
-    }
-
-    if (isValidElement(component)) {
-      return cloneElement(component, {
         depth,
       });
-    }
+    }}
+  </Subscriber>
+);
 
-    return createElement(component, {
-      depth,
-    });
-  }
+export const enhance = compose(
+  setDisplayName('Heading'),
+  setPropTypes({
+    component: PropTypes.node.isRequired,
+  }),
+);
 
-  render() {
-    return (
-      <Subscriber channel="@team-griffin/react-heading-section/depth">
-        {this.renderComponent}
-      </Subscriber>
-    );
-  }
-}
-
-export default Heading;
+export default enhance(Heading);
