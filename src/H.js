@@ -4,7 +4,7 @@ const H = (props) => {
   const {
     depth,
     children,
-    ...rest,
+    ...rest
   } = props;
 
   return createElement(

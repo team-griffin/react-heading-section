@@ -1,29 +1,24 @@
-import React, { PropTypes } from 'react';
-import { Broadcast } from 'react-broadcast';
-import { Subscriber } from 'react-broadcast';
+import { PropTypes } from 'react';
 
 const findClosestDepth = (props) => {
   const {
-    depth
+    depth,
   } = props;
 
-  for (let i = depth; i > 0; i--) {
-    let h = props[`h${i}`];
-    if(h != null) {
+  for (let i = depth; i > 0; i -= 1) {
+    const h = props[`h${i}`];
+    if (h != null) {
       return h;
     }
   }
 };
 
 const HeadingMatrix = (props) => {
-  const {
-    depth,
-  } = props;
-
   return findClosestDepth(props);
 };
 HeadingMatrix.displayName = 'HeadingMatrix';
 HeadingMatrix.propTypes = {
+  depth: PropTypes.number.isRequired,
 };
 
 export default HeadingMatrix;

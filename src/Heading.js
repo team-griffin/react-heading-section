@@ -1,7 +1,17 @@
-import React, { PropTypes, Component, createElement, cloneElement, isValidElement } from 'react';
+import React, {
+  PropTypes,
+  Component,
+  createElement,
+  cloneElement,
+  isValidElement,
+} from 'react';
 import { Subscriber } from 'react-broadcast';
 
 class Heading extends Component {
+
+  static propTypes = {
+    component: PropTypes.node.isRequired,
+  }
 
   constructor(props) {
     super(props);
@@ -14,7 +24,7 @@ class Heading extends Component {
       component,
     } = this.props;
 
-    if(typeof component === 'string') {
+    if (typeof component === 'string') {
       return createElement(component, {
       });
     }

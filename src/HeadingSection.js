@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Broadcast } from 'react-broadcast';
-import { Subscriber } from 'react-broadcast';
+import { Broadcast, Subscriber } from 'react-broadcast';
 
 const HeadingSection = (props) => {
   return (

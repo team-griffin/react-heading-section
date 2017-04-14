@@ -13,7 +13,7 @@ describe('<H/>', function() {
   });
 
   it('passes through the children', function() {
-    const h = shallow(<H depth={1}><div class="foo"/></H>);
+    const h = shallow(<H depth={1}><div className="foo"/></H>);
 
     expect(h.children()).to.have.length(1);
   });
