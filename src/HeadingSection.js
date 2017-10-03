@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Broadcast, Subscriber } from 'react-broadcast';
 import { setDisplayName, setPropTypes, compose } from 'recompose';
 

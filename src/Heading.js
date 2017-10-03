@@ -1,9 +1,9 @@
 import React, {
-  PropTypes,
   createElement,
   cloneElement,
   isValidElement,
 } from 'react';
+import PropTypes from 'prop-types';
 import { Subscriber } from 'react-broadcast';
 import { setDisplayName, setPropTypes, compose } from 'recompose';
 
