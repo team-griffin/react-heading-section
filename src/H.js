@@ -1,4 +1,5 @@
-import { PropTypes, createElement } from 'react';
+import PropTypes from 'prop-types';
+import { createElement } from 'react';
 import { setDisplayName, setPropTypes, compose } from 'recompose';
 
 export const H = ({

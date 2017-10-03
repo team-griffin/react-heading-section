@@ -1,7 +1,10 @@
 import React from 'react';
 import { expect } from 'chai';
+import Adapter from 'enzyme-adapter-react-16';
 import H from '../H';
-import { shallow } from 'enzyme';
+import { configure, shallow } from 'enzyme';
+
+configure({ adapter: new Adapter() });
 
 describe('<H/>', function() {
   it('renders an h at the given depth', function() {
