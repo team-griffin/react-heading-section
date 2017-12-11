@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import HeadingRoot from './HeadingRoot';
 import HeadingSection from './HeadingSection';
 import Heading from './Heading';
