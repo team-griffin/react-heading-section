@@ -17,7 +17,6 @@ export default {
     localResolve(),
     babel({
       exclude: 'node_modules/**',
-      plugins: ['external-helpers'],
     }),
   ],
 };

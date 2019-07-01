@@ -1,28 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Broadcast, Subscriber } from 'react-broadcast';
-import { setDisplayName, setPropTypes, compose } from 'recompose';
+import { Provider, Consumer } from './context';
+import { setDisplayName, compose } from 'recompose';
 
 export const HeadingSection = ({
   children,
 }) => (
-  <Subscriber channel="@team-griffin/react-heading-section/depth">
+  <Consumer>
     {(depth) => (
-      <Broadcast
-        channel="@team-griffin/react-heading-section/depth"
+      <Provider
         value={depth + 1}
       >
         {children}
-      </Broadcast>
+      </Provider>
     )}
-  </Subscriber>
+  </Consumer>
 );
 
 export const enhance = compose(
   setDisplayName('HeadingSection'),
-  setPropTypes({
-    children: PropTypes.node.isRequired,
-  }),
 );
 
 export default enhance(HeadingSection);

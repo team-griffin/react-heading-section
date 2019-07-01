@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
 import { createElement } from 'react';
-import { setDisplayName, setPropTypes, compose } from 'recompose';
+import { setDisplayName, compose } from 'recompose';
 
 export const H = ({
   depth,
@@ -14,10 +13,6 @@ export const H = ({
 
 export const enhance = compose(
   setDisplayName('H'),
-  setPropTypes({
-    depth: PropTypes.number.isRequired,
-    children: PropTypes.node,
-  }),
 );
 
 export default enhance(H);

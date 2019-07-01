@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import { setDisplayName, setPropTypes, compose } from 'recompose';
+import { setDisplayName, compose } from 'recompose';
 
 const findClosestDepth = (props) => {
   const {
@@ -22,9 +21,6 @@ export const HeadingMatrix = findClosestDepth;
 
 export const enhance = compose(
   setDisplayName('HeadingMatrix'),
-  setPropTypes({
-    depth: PropTypes.number.isRequired,
-  }),
 );
 
 export default enhance(HeadingMatrix);
