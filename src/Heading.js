@@ -3,14 +3,13 @@ import React, {
   cloneElement,
   isValidElement,
 } from 'react';
-import PropTypes from 'prop-types';
-import { Subscriber } from 'react-broadcast';
-import { setDisplayName, setPropTypes, compose } from 'recompose';
+import { Consumer } from './context';
+import { setDisplayName, compose } from 'recompose';
 
 export const Heading = ({
   component,
 }) => (
-  <Subscriber channel="@team-griffin/react-heading-section/depth">
+  <Consumer>
     {(depth) => {
       if (typeof component === 'string') {
         return createElement(component, {
@@ -27,14 +26,11 @@ export const Heading = ({
         depth,
       });
     }}
-  </Subscriber>
+  </Consumer>
 );
 
 export const enhance = compose(
   setDisplayName('Heading'),
-  setPropTypes({
-    component: PropTypes.node.isRequired,
-  }),
 );
 
 export default enhance(Heading);
