@@ -5,11 +5,11 @@ export default {
   input: 'src/index.js',
   output: [
     {
-      file: 'dist/es/react-heading-section.development.js',
+      file: 'dist/es/react-heading-section.js',
       format: 'es',
     },
     {
-      file: 'dist/cjs/react-heading-section.development.js',
+      file: 'dist/cjs/react-heading-section.js',
       format: 'cjs',
     },
   ],
